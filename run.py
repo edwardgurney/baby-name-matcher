@@ -21,6 +21,10 @@ def start():
     user1 = input("What is the name of user 1?: ")
     user2 = input("Thanks, can I now have the name of user 2 please?: ")
 
+    print(f"Hello {user1} and {user2}, would you like to select boy names")
+    print("girl names or both?")
+    gender_selection = input("1.Boy, 2.Girl, 3.Both: ")
+
     print(f"Hello {user1} and {user2}, are you ready to see which")
     print("baby names you both like?")
     print(f"{user1}, you will go first, {user2}, you will go second.")
