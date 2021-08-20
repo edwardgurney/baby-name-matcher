@@ -15,7 +15,7 @@ def introduction():
     print("to help you pick a name for your new baby.\n")
     print("Would you like to start a matching session?\n")
 
-    intro_answer = input("Please type 'y' for yes or 'n' for no: ")
+    intro_answer = input("Please type 'y' for yes or 'n' for no: \n")
 
     if intro_answer == 'y':
         start()
@@ -31,32 +31,35 @@ Obtains required inputs from users to start the game
 
 
 def start():
-    user1 = input("What is the name of user 1?: ")
-    user2 = input("Thanks, can I now have the name of user 2 please?: ")
-
-    print(f"Hello {user1} and {user2}, would you like to select boy names")
-    print("girl names or both?")
-    gender_selection = input("1.Boy, 2.Girl, 3.Both: ")
+    user1 = input("What is the name of user 1?: \n")
+    user2 = input("Thanks, can I now have the name of user 2 please?: \n")
 
     print(f"Hello {user1} and {user2}, are you ready to see which")
-    print("baby names you both like?")
-    print(f"{user1}, you will go first, {user2}, you will go second.")
+    print("baby names you both like?\n")
+    print(f"{user1}, you will go first, {user2}, you will go second...")
     print("When the baby names appear, please type 'y' or 'n'\n")
+    print("Would you like to select boy names, girl names or both?")
+
+    gender_selection = input("1.Boy, 2.Girl, 3.Both: ")
     print(f"{user1}, are you ready, your names are coming...")
-    if gender_selection == 1 or 'boy':
+
+    # print(gender_selection)
+    # print("BOY")
+
+    if gender_selection == str(1) or gender_selection == 'boy':
         updated_boy_list1 = boys()
-    # if gender_selection == 2 or 'girl':
-    #     girls()
-    # elif gender_selection == 3 or 'both':
-    #     both()
+    elif gender_selection == str(2) or gender_selection == 'girl':
+        updated_girl_list2 = girls()
+    elif gender_selection == str(3) or gender_selection == 'both':
+        updated_both_list3 = both()
 
 
 boy_list_1 = []
-# girl_list_2 = []
-# both_list_3 = []
+girl_list_2 = []
+both_list_3 = []
 
 
-def boys(length=20):
+def boys():
     # for names in boy_names:
     for name in range(20):
         name = (random.choice(boy_names))
@@ -68,6 +71,32 @@ def boys(length=20):
     return boy_list_1
 
 
+def girls():
+    for gname in range(20):
+        gname = (random.choice(girl_names))
+        print(gname)
+        girls_answer = input("y/n: ")
+        if girls_answer == 'y':
+            girl_list_2.append(gname)
+
+    return girl_list_2
+
+
+def both():
+    for bname in range(20):
+        bname = (random.choice(both_names))
+        print(bname)
+        both_answer = input("y/n: ")
+        if both_answer == 'y':
+            both_list_3.append(bname)
+
+    return both_list_3
+
+
 list1 = boy_list_1
+list2 = girl_list_2
+list3 = both_list_3
 introduction()
 print(list1)
+print(list2)
+print(list3)

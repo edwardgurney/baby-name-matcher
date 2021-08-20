@@ -17,8 +17,8 @@ boy_names = [
             ]
 
 girl_names = [
-                "Olivia", "Emily", "Isla", "Sophie", "Ella", "Ava", "Amelia"
-                "Grace", "Freya", "Charlotte", "Jessica", "Lucy", "Ellie"
+                "Olivia", "Emily", "Isla", "Sophie", "Ella", "Ava", "Amelia",
+                "Grace", "Freya", "Charlotte", "Jessica", "Lucy", "Ellie",
                 "Sophia", "Aria", "Lily", "Harper", "Mia", "Rosie", "Millie",
                 "Evie", "Eilidh", "Ruby", "Willow", "Anna", "Maisie", "Hannah",
                 "Eva", "Chloe", "Mila", "Orla", "Isabella", "Ivy", "Emma",
@@ -50,9 +50,9 @@ both_names = [
                 "Ruaridh", "Connor", "Benjamin", "Kai", "Michael", "Jackson",
                 "Leon", "Cooper", "Louis", "Theodore", "Fraser", "Owen",
                 "Rueben", "John", "Carson", "Innes", "Eliyah", "Murray",
-                "Grayson", "Aiden", "Alex", "Cody", "Elliot", "Ben", "Henry"
-                "Olivia", "Emily", "Isla", "Sophie", "Ella", "Ava", "Amelia"
-                "Grace", "Freya", "Charlotte", "Jessica", "Lucy", "Ellie"
+                "Grayson", "Aiden", "Alex", "Cody", "Elliot", "Ben", "Henry",
+                "Olivia", "Emily", "Isla", "Sophie", "Ella", "Ava", "Amelia",
+                "Grace", "Freya", "Charlotte", "Jessica", "Lucy", "Ellie",
                 "Sophia", "Aria", "Lily", "Harper", "Mia", "Rosie", "Millie",
                 "Evie", "Eilidh", "Ruby", "Willow", "Anna", "Maisie", "Hannah",
                 "Eva", "Chloe", "Mila", "Orla", "Isabella", "Ivy", "Emma",
