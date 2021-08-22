@@ -31,6 +31,9 @@ Obtains required inputs from users to start the game
 
 
 def start():
+    global user1
+    global user2
+    global updated_boy_list1
     user1 = input("What is the name of user 1?: \n")
     user2 = input("Thanks, can I now have the name of user 2 please?: \n")
 
@@ -55,11 +58,13 @@ def start():
 
 
 boy_list_1 = []
+boy_list_2 = []
 girl_list_2 = []
 both_list_3 = []
 
 
 def boys():
+    global boys_answer
     # for names in boy_names:
     for name in range(20):
         name = (random.choice(boy_names))
@@ -95,11 +100,28 @@ def both():
 
     return both_list_3
 
+"""
+Prints out the same randomly generatd list that user 1 had, for user 2
+"""
+def user2_start():
+    print(f"{user2} it's now your turn... get ready..." + "\n")
+    name2 = (random.choice(updated_boy_list1))
+    updated_boy_list1.remove(name2)
+    print(name2)
+    boys_answer2 = input("y/n: ")
+    if boys_answer2 == 'y':
+        boy_list_2.append(name2)
+
+    return boy_list_2
+
 
 list1 = boy_list_1
 list2 = girl_list_2
 list3 = both_list_3
+# list4 = boy_list_2
 introduction()
 print(list1)
 print(list2)
 print(list3)
+# print(list4)
+user2_start()
