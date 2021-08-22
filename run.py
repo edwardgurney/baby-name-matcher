@@ -41,7 +41,7 @@ def start():
     print("baby names you both like?\n")
     print(f"{user1}, you will go first, {user2}, you will go second...")
     print("When the baby names appear, please type 'y' or 'n'\n")
-    print("Would you like to select boy names, girl names or both?")
+    print("Would you like to 1select boy names, girl names or both?")
 
     gender_selection = input("1.Boy, 2.Girl, 3.Both: ")
     print(f"{user1}, are you ready, your names are coming...")
@@ -61,6 +61,7 @@ boy_list_1 = []
 boy_list_2 = []
 girl_list_2 = []
 both_list_3 = []
+new_boy_list = []
 
 
 def boys():
@@ -70,11 +71,18 @@ def boys():
         name = (random.choice(boy_names))
         boy_names.remove(name)
         print(name)
+        new_boy_list.append(name)
         boys_answer = input("y/n: ")
         if boys_answer == 'y':
             boy_list_1.append(name)
-            # print(boy_list_1)
+
     return boy_list_1
+
+""" **Why is new_boy_list not generating/printing?**"""
+print(new_boy_list)
+
+
+# print(new_boy_list)
 
 
 def girls():
@@ -100,19 +108,22 @@ def both():
 
     return both_list_3
 
+
 """
 Prints out the same randomly generatd list that user 1 had, for user 2
 """
+
+
 def user2_start():
     print(f"{user2} it's now your turn... get ready..." + "\n")
-    name2 = (random.choice(updated_boy_list1))
-    updated_boy_list1.remove(name2)
-    print(name2)
-    boys_answer2 = input("y/n: ")
-    if boys_answer2 == 'y':
-        boy_list_2.append(name2)
+#     name2 = (random.choice(updated_boy_list1))
+#     updated_boy_list1.remove(name2)
+#     print(name2)
+#     boys_answer2 = input("y/n: ")
+#     if boys_answer2 == 'y':
+#         boy_list_2.append(name2)
 
-    return boy_list_2
+#     return boy_list_2
 
 
 list1 = boy_list_1
