@@ -63,6 +63,7 @@ def boys():
     # for names in boy_names:
     for name in range(20):
         name = (random.choice(boy_names))
+        boy_names.remove(name)
         print(name)
         boys_answer = input("y/n: ")
         if boys_answer == 'y':
@@ -74,6 +75,7 @@ def boys():
 def girls():
     for gname in range(20):
         gname = (random.choice(girl_names))
+        girl_names.remove(gname)
         print(gname)
         girls_answer = input("y/n: ")
         if girls_answer == 'y':
@@ -85,6 +87,7 @@ def girls():
 def both():
     for bname in range(20):
         bname = (random.choice(both_names))
+        both_names.remove(bname)
         print(bname)
         both_answer = input("y/n: ")
         if both_answer == 'y':
