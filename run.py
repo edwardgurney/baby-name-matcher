@@ -51,6 +51,11 @@ def start():
 
     if gender_selection == str(1) or gender_selection == 'boy':
         updated_boy_list1 = boys()
+        # list 1
+        # print(updated_boy_list1[0])
+        #list 2
+        # print(updated_boy_list1[1])
+
     elif gender_selection == str(2) or gender_selection == 'girl':
         updated_girl_list2 = girls()
     elif gender_selection == str(3) or gender_selection == 'both':
@@ -76,13 +81,8 @@ def boys():
         if boys_answer == 'y':
             boy_list_1.append(name)
 
-    return boy_list_1
-
-""" **Why is new_boy_list not generating/printing?**"""
-print(new_boy_list)
-
-
-# print(new_boy_list)
+    # print(new_boy_list)
+    return new_boy_list, boy_list_1
 
 
 def girls():
@@ -116,6 +116,11 @@ Prints out the same randomly generatd list that user 1 had, for user 2
 
 def user2_start():
     print(f"{user2} it's now your turn... get ready..." + "\n")
+    # my_list = len(new_boy_list)
+    for name in range(20):
+        print(name)
+        user2_answer = input("y/n: ")
+
 #     name2 = (random.choice(updated_boy_list1))
 #     updated_boy_list1.remove(name2)
 #     print(name2)
