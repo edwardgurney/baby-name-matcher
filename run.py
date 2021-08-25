@@ -9,6 +9,13 @@ import string
 Introduction to the game that seeks user input asking if they want to play
 """
 
+boy_list_1 = []
+boy_list_2 = []
+girl_list_2 = []
+both_list_3 = []
+new_boy_list = []
+updated_boy_list1 = []
+
 
 def introduction():
     print("Welcome to the Baby Name Matching Robot. I'm here")
@@ -45,12 +52,10 @@ def start():
 
     gender_selection = input("1.Boy, 2.Girl, 3.Both: ")
     print(f"{user1}, are you ready, your names are coming...")
-
-    # print(gender_selection)
-    # print("BOY")
-
     if gender_selection == str(1) or gender_selection == 'boy':
+        global updated_boy_list1
         updated_boy_list1 = boys()
+
         # list 1
         # print(updated_boy_list1[0])
         #list 2
@@ -62,15 +67,10 @@ def start():
         updated_both_list3 = both()
 
 
-boy_list_1 = []
-boy_list_2 = []
-girl_list_2 = []
-both_list_3 = []
-new_boy_list = []
-
-
 def boys():
     global boys_answer
+    global new_boy_list
+
     # for names in boy_names:
     for name in range(20):
         name = (random.choice(boy_names))
@@ -113,13 +113,32 @@ def both():
 Prints out the same randomly generatd list that user 1 had, for user 2
 """
 
+myList = [updated_boy_list1]
+
+
+# def iterate_list_boys(myList):
+#     for word in myList:
+#         print(word)
+
+# iterate_list(myList)
+
 
 def user2_start():
     print(f"{user2} it's now your turn... get ready..." + "\n")
-    # my_list = len(new_boy_list)
-    for name in range(20):
+    # print(updated_boy_list1)
+    for name in new_boy_list:
+        # name = (random.choice(updated_boy_list1))
         print(name)
         user2_answer = input("y/n: ")
+        if user2_answer == 'y':
+            boy_list_2.append(name)
+            # print(boy_list_2)
+
+    # iterate_list_boys(updated_boy_list1)
+    # user2_answer = input("y/n: ")
+    # if user2_answer == 'y':
+    #     boy_list_2.append(myList)
+    #     print(boy_list_2)
 
 #     name2 = (random.choice(updated_boy_list1))
 #     updated_boy_list1.remove(name2)
