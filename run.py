@@ -11,9 +11,13 @@ Introduction to the game that seeks user input asking if they want to play
 
 boy_list_1 = []
 boy_list_2 = []
+girl_list_1 = []
 girl_list_2 = []
-both_list_3 = []
+both_list_1 = []
+both_list_2 = []
 new_boy_list = []
+new_girl_list = []
+new_both_list = []
 updated_boy_list1 = []
 
 
@@ -90,11 +94,13 @@ def girls():
         gname = (random.choice(girl_names))
         girl_names.remove(gname)
         print(gname)
+        new_girl_list.append(gname)
         girls_answer = input("y/n: ")
         if girls_answer == 'y':
-            girl_list_2.append(gname)
+            girl_list_1.append(gname)
 
-    return girl_list_2
+    # print(new_girl_list, girl_list_1)
+    return girl_list_1, new_girl_list
 
 
 def both():
@@ -102,28 +108,20 @@ def both():
         bname = (random.choice(both_names))
         both_names.remove(bname)
         print(bname)
+        new_both_list.append(bname)
         both_answer = input("y/n: ")
         if both_answer == 'y':
-            both_list_3.append(bname)
+            both_list_1.append(bname)
 
-    return both_list_3
+    return new_both_list, both_list_1
 
 
 """
-Prints out the same randomly generatd list that user 1 had, for user 2
+Prints out the same randomly generatd boy list that user 1 had, for user 2
 """
 
-myList = [updated_boy_list1]
 
-
-# def iterate_list_boys(myList):
-#     for word in myList:
-#         print(word)
-
-# iterate_list(myList)
-
-
-def user2_start():
+def user2_boy_start():
     print(f"{user2} it's now your turn... get ready..." + "\n")
     # print(updated_boy_list1)
     for name in new_boy_list:
@@ -133,12 +131,54 @@ def user2_start():
         if user2_answer == 'y':
             boy_list_2.append(name)
             # print(boy_list_2)
+    # print(boy_list_2)
+    return boy_list_2
 
-    # iterate_list_boys(updated_boy_list1)
-    # user2_answer = input("y/n: ")
-    # if user2_answer == 'y':
-    #     boy_list_2.append(myList)
-    #     print(boy_list_2)
+
+"""
+Compares both boy name lists from both users and checks for matches
+"""
+
+
+
+"""
+Prints out the same randomly generatd girl list that user 1 had, for user 2
+"""
+
+
+def user2_girl_start():
+    print(f"{user2} it's now your turn to play... get ready..." + "\n")
+    for name in new_girl_list:
+        print(name)
+        user2_answer = input("y/n: ")
+        if user2_answer == 'y':
+            girl_list_2.append(name)
+            # print(girl_list_2)
+    return girl_list_2
+
+
+"""
+Prints out the same randomly generatd both names list that user 1 had,
+for user 2 to enter responses
+"""
+
+
+def user2_both_start():
+    print(f"{user2} it's now your turn... get ready")
+    for name in new_both_list:
+        print(name)
+        user2_answer = input("y/n: ")
+        if user2_answer == 'y':
+            both_list_2.append(name)
+            # print(both_list_2)
+    return both_list_2
+
+
+# iterate_list_boys(updated_boy_list1)
+# user2_answer = input("y/n: ")
+# if user2_answer == 'y':
+#     boy_list_2.append(myList)
+#     print(boy_list_2)
 
 #     name2 = (random.choice(updated_boy_list1))
 #     updated_boy_list1.remove(name2)
@@ -150,13 +190,17 @@ def user2_start():
 #     return boy_list_2
 
 
-list1 = boy_list_1
-list2 = girl_list_2
-list3 = both_list_3
+# list1 = boy_list_1
+# list2 = girl_list_2
+# list3 = both_list_3
 # list4 = boy_list_2
 introduction()
-print(list1)
-print(list2)
-print(list3)
+# print(list1)
+# print(list2)
+# print(list3)
 # print(list4)
-user2_start()
+
+
+user2_boy_start()
+user2_girl_start()
+user2_both_start()
