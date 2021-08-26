@@ -19,6 +19,8 @@ new_boy_list = []
 new_girl_list = []
 new_both_list = []
 updated_boy_list1 = []
+t1 = ()
+t2 = ()
 
 
 def introduction():
@@ -74,6 +76,7 @@ def start():
 def boys():
     global boys_answer
     global new_boy_list
+    global t1
 
     # for names in boy_names:
     for name in range(20):
@@ -84,10 +87,10 @@ def boys():
         boys_answer = input("y/n: ")
         if boys_answer == 'y':
             boy_list_1.append(name)
-            t1 = tuple(boy_list_1)
+            # t1 = tuple(boy_list_1)
 
     # print(new_boy_list)
-    print(t1)
+    # print(t1)
     return new_boy_list, boy_list_1, t1
 
 
@@ -124,6 +127,7 @@ Prints out the same randomly generatd boy list that user 1 had, for user 2
 
 
 def user2_boy_start():
+    global t2
     print(f"{user2} it's now your turn... get ready..." + "\n")
     # print(updated_boy_list1)
     for name in new_boy_list:
@@ -132,12 +136,13 @@ def user2_boy_start():
         user2_answer = input("y/n: ")
         if user2_answer == 'y':
             boy_list_2.append(name)
-            t2 = tuple(boy_list_2)
+            # t2 = tuple(boy_list_2)
             # print(t2)
             # print(boy_list_2)
             # print(list1)
             # print(my_tuple_1)
     # print(boy_list_2)
+    # print(t2)
     return boy_list_2, t2
 
 
@@ -146,11 +151,21 @@ Compares both boy name lists from both users and checks for matches
 """
 
 def check_matches_boys():
-    a = [boy_list_1]
-    b = [boy_list_2]
-    set(a) & set(b)
-    matched_names = a & b
-    print(matched_names)
+    a = list1
+    b = list4
+    # set(a) & set(b)
+    # set(t1).intersection(t2)
+    # matched_names = set(a) & set(b)
+    # print(matched_names)
+    # print(matched_names)
+    # print(matched_names)
+    # new_list = list(set(a).intersection(b))
+    # print(new_list)
+    d = []
+    for x in a:
+        if x in b:
+            d.append(x)
+    print(d)
 
 
 """
@@ -202,22 +217,22 @@ def user2_both_start():
 #     return boy_list_2
 
 
-# list1 = boy_list_1
-# my_tuple_1 = tuple(list1)
+list1 = boy_list_1
+my_tuple_1 = t1
+my_tuple_2 = t2
 # list2 = girl_list_2
 # list3 = both_list_3
-# list4 = boy_list_2
+list4 = boy_list_2
 introduction()
 # print(list1)
 # print(list2)
 # print(list3)
 # print(list4)
 
-
 user2_boy_start()
-user2_girl_start()
-user2_both_start()
-print(boy_list_1)
+# user2_girl_start()
+# user2_both_start()
+# print(boy_list_1)
 # my_tuple_1
 check_matches_boys()
 # my_tuple_1
