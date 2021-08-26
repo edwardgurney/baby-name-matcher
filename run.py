@@ -112,6 +112,8 @@ def girls():
 
 
 def both():
+    global both_answer
+    global new_both_list
     for bname in range(20):
         bname = (random.choice(both_names))
         both_names.remove(bname)
@@ -121,6 +123,7 @@ def both():
         if both_answer == 'y':
             both_list_1.append(bname)
 
+    print(both_list_1)
     return new_both_list, both_list_1
 
 
@@ -214,8 +217,21 @@ def user2_both_start():
         user2_answer = input("y/n: ")
         if user2_answer == 'y':
             both_list_2.append(name)
-            # print(both_list_2)
+
+    print(both_list_2)
+    check_matches_both()
     return both_list_2
+
+
+def check_matches_both():
+    a = list5
+    b = list6
+    both_matches = []
+    for x in a:
+        if x in b:
+            both_matches.append(x)
+    print(both_matches)
+    return both_matches
 
 
 # iterate_list_boys(updated_boy_list1)
@@ -240,6 +256,8 @@ my_tuple_2 = t2
 list3 = girl_list_1
 list4 = girl_list_2
 list2 = boy_list_2
+list5 = both_list_1
+list6 = both_list_2
 introduction()
 # print(list1)
 # print(list2)
@@ -248,7 +266,7 @@ introduction()
 
 user2_boy_start()
 user2_girl_start()
-# user2_both_start()
+user2_both_start()
 # print(boy_list_1)
 # my_tuple_1
 # check_matches_boys()
