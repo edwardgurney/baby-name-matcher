@@ -89,12 +89,15 @@ def boys():
             boy_list_1.append(name)
             # t1 = tuple(boy_list_1)
 
-    # print(new_boy_list)
+    print(boy_list_1)
     # print(t1)
     return new_boy_list, boy_list_1, t1
 
 
 def girls():
+    global girls_answer
+    global new_girl_list
+
     for gname in range(20):
         gname = (random.choice(girl_names))
         girl_names.remove(gname)
@@ -103,7 +106,7 @@ def girls():
         girls_answer = input("y/n: ")
         if girls_answer == 'y':
             girl_list_1.append(gname)
-
+    print(girl_list_1)
     # print(new_girl_list, girl_list_1)
     return girl_list_1, new_girl_list
 
@@ -141,8 +144,9 @@ def user2_boy_start():
             # print(boy_list_2)
             # print(list1)
             # print(my_tuple_1)
-    # print(boy_list_2)
+    print(boy_list_2)
     # print(t2)
+    check_matches_boys()
     return boy_list_2, t2
 
 
@@ -150,9 +154,10 @@ def user2_boy_start():
 Compares both boy name lists from both users and checks for matches
 """
 
+
 def check_matches_boys():
     a = list1
-    b = list4
+    b = list2
     # set(a) & set(b)
     # set(t1).intersection(t2)
     # matched_names = set(a) & set(b)
@@ -161,11 +166,11 @@ def check_matches_boys():
     # print(matched_names)
     # new_list = list(set(a).intersection(b))
     # print(new_list)
-    d = []
+    matches = []
     for x in a:
         if x in b:
-            d.append(x)
-    print(d)
+            matches.append(x)
+    print(matches)
 
 
 """
@@ -180,9 +185,21 @@ def user2_girl_start():
         user2_answer = input("y/n: ")
         if user2_answer == 'y':
             girl_list_2.append(name)
-            # print(girl_list_2)
+
+    # print(girl_list_2)
+    check_matches_girls()
     return girl_list_2
 
+
+def check_matches_girls():
+    a = list3
+    b = list4
+    girl_matches = []
+    for x in a:
+        if x in b:
+            girl_matches.append(x)
+    print(girl_matches)
+    return girl_matches
 
 """
 Prints out the same randomly generatd both names list that user 1 had,
@@ -220,9 +237,9 @@ def user2_both_start():
 list1 = boy_list_1
 my_tuple_1 = t1
 my_tuple_2 = t2
-# list2 = girl_list_2
-# list3 = both_list_3
-list4 = boy_list_2
+list3 = girl_list_1
+list4 = girl_list_2
+list2 = boy_list_2
 introduction()
 # print(list1)
 # print(list2)
@@ -230,9 +247,9 @@ introduction()
 # print(list4)
 
 user2_boy_start()
-# user2_girl_start()
+user2_girl_start()
 # user2_both_start()
 # print(boy_list_1)
 # my_tuple_1
-check_matches_boys()
+# check_matches_boys()
 # my_tuple_1
