@@ -84,9 +84,11 @@ def boys():
         boys_answer = input("y/n: ")
         if boys_answer == 'y':
             boy_list_1.append(name)
+            t1 = tuple(boy_list_1)
 
     # print(new_boy_list)
-    return new_boy_list, boy_list_1
+    print(t1)
+    return new_boy_list, boy_list_1, t1
 
 
 def girls():
@@ -130,15 +132,25 @@ def user2_boy_start():
         user2_answer = input("y/n: ")
         if user2_answer == 'y':
             boy_list_2.append(name)
+            t2 = tuple(boy_list_2)
+            # print(t2)
             # print(boy_list_2)
+            # print(list1)
+            # print(my_tuple_1)
     # print(boy_list_2)
-    return boy_list_2
+    return boy_list_2, t2
 
 
 """
 Compares both boy name lists from both users and checks for matches
 """
 
+def check_matches_boys():
+    a = [boy_list_1]
+    b = [boy_list_2]
+    set(a) & set(b)
+    matched_names = a & b
+    print(matched_names)
 
 
 """
@@ -191,6 +203,7 @@ def user2_both_start():
 
 
 # list1 = boy_list_1
+# my_tuple_1 = tuple(list1)
 # list2 = girl_list_2
 # list3 = both_list_3
 # list4 = boy_list_2
@@ -204,3 +217,7 @@ introduction()
 user2_boy_start()
 user2_girl_start()
 user2_both_start()
+print(boy_list_1)
+# my_tuple_1
+check_matches_boys()
+# my_tuple_1
