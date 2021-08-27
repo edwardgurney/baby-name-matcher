@@ -1,7 +1,5 @@
 from name import boy_names, girl_names, both_names
 import random
-import string
-
 
 """
 Introduction to the game that seeks user input asking if they want to play
@@ -16,7 +14,7 @@ both_list_2 = []
 new_boy_list = []
 new_girl_list = []
 new_both_list = []
-updated_boy_list1 = []
+# updated_boy_list1 = []
 t1 = ()
 t2 = ()
 
@@ -45,7 +43,7 @@ def start():
 
     global user1
     global user2
-    global updated_boy_list1
+    # global updated_boy_list1
     user1 = input("What is the name of user 1?: \n")
     user2 = input("Thanks, can I now have the name of user 2 please?: \n")
 
@@ -58,12 +56,11 @@ def start():
     gender_selection = input("1.Boy, 2.Girl, 3.Both: ")
     print(f"{user1}, are you ready, your names are coming...")
     if gender_selection == str(1) or gender_selection == 'boy':
-        global updated_boy_list1
-        updated_boy_list1 = boys()
+        boys()
     elif gender_selection == str(2) or gender_selection == 'girl':
-        updated_girl_list2 = girls()
+        girls()
     elif gender_selection == str(3) or gender_selection == 'both':
-        updated_both_list3 = both()
+        both()
 
 
 def boys():
@@ -134,7 +131,7 @@ def user2_boy_start():
         if user2_answer == 'y':
             boy_list_2.append(name)
 
-    print(boy_list_2)
+    # print(boy_list_2)
 
     check_matches_boys()
     return boy_list_2, t2
@@ -166,6 +163,8 @@ def check_matches_boys():
 
 def game_over():
     print("Sorry, no matches. You'll have to play again")
+
+
 """
 Prints out the same randomly generatd girl list that user 1 had, for user 2
 """
@@ -207,8 +206,16 @@ def check_matches_girls():
         if x in b:
             matches.append(x)
 
-    print(matches)
-    results(matches)
+    if len(matches):
+        results(matches)
+    else:
+        game_over()
+
+    # print(matches)
+    # results(matches)
+
+    # print(matches)
+    # results(matches)
     return matches
 
 
@@ -226,7 +233,7 @@ def user2_both_start():
         if user2_answer == 'y':
             both_list_2.append(name)
 
-    print(both_list_2)
+    # print(both_list_2)
     check_matches_both()
     return both_list_2
 
@@ -241,8 +248,15 @@ def check_matches_both():
         if x in b:
             matches.append(x)
 
+    if len(matches):
+        results(matches)
+    else:
+        game_over()
+
     # print(matches)
-    results(matches)
+    # results(matches)
+    # print(matches)
+    # results(matches)
     return matches
 
 
