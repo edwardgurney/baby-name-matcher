@@ -1,9 +1,6 @@
 from name import boy_names, girl_names, both_names
 import random
 
-"""
-Introduction to the game that seeks user input asking if they want to play
-"""
 
 boy_list_1 = []
 boy_list_2 = []
@@ -14,9 +11,11 @@ both_list_2 = []
 new_boy_list = []
 new_girl_list = []
 new_both_list = []
-# updated_boy_list1 = []
-t1 = ()
-t2 = ()
+
+
+"""
+Introduction to the game that seeks user input asking if they want to play
+"""
 
 
 def introduction():
@@ -30,8 +29,10 @@ def introduction():
         start()
     elif intro_answer == 'n':
         print("Oh that's too bad... maybe next time.")
+        quit()
     elif intro_answer != 'y' or 'n':
         print("That is not a valid input, system will now close...")
+        quit()
 
 
 """
@@ -43,7 +44,6 @@ def start():
 
     global user1
     global user2
-    # global updated_boy_list1
     user1 = input("What is the name of user 1?: \n")
     user2 = input("Thanks, can I now have the name of user 2 please?: \n")
 
@@ -54,20 +54,30 @@ def start():
     print("Would you like to 1select boy names, girl names or both?")
 
     gender_selection = input("1.Boy, 2.Girl, 3.Both: ")
-    print(f"{user1}, are you ready, your names are coming...")
     if gender_selection == str(1) or gender_selection == 'boy':
         boys()
     elif gender_selection == str(2) or gender_selection == 'girl':
         girls()
     elif gender_selection == str(3) or gender_selection == 'both':
         both()
+    else:
+        print("You entered and ivalid input, try again...\n")
+        start()
+
+
+"""
+- Iterates through boy_names list generating 20 random names,
+removes that name from the list (to prevent repeat names) and
+creates new list so user 2 can receive same names.
+- Asks user for input, if they like the name and if so, is
+appended to a new list to compare with user 2.
+"""
 
 
 def boys():
     global boys_answer
     global new_boy_list
-    global t1
-
+    print(f"{user1}, are you ready, your names are coming...")
     for name in range(20):
         name = (random.choice(boy_names))
         boy_names.remove(name)
@@ -78,13 +88,22 @@ def boys():
             boy_list_1.append(name)
 
     user2_boy_start()
-    return new_boy_list, boy_list_1, t1
+    return new_boy_list, boy_list_1,
+
+
+"""
+- Iterates through girl_names list generating 20 random names,
+removes that name from the list (to prevent repeat names) and
+creates new list so user 2 can receive same names.
+- Asks user for input, if they like the name and if so, is
+appended to a new list to compare with user 2.
+"""
 
 
 def girls():
     global girls_answer
     global new_girl_list
-
+    print(f"{user1}, are you ready, your names are coming...")
     for gname in range(20):
         gname = (random.choice(girl_names))
         girl_names.remove(gname)
@@ -94,14 +113,23 @@ def girls():
         if girls_answer == 'y':
             girl_list_1.append(gname)
 
-    print(girl_list_1)
     user2_girl_start()
     return girl_list_1, new_girl_list
+
+
+"""
+- Iterates through both_names list' generating 20 random names,
+removes that name from the list (to prevent repeat names) and
+creates new list so user 2 can receive same names.
+- Asks user for input, if they like the name and if so, is
+appended to a new list to compare with user 2.
+"""
 
 
 def both():
     global both_answer
     global new_both_list
+    print(f"{user1}, are you ready, your names are coming...")
     for bname in range(20):
         bname = (random.choice(both_names))
         both_names.remove(bname)
@@ -111,19 +139,18 @@ def both():
         if both_answer == 'y':
             both_list_1.append(bname)
 
-    print(both_list_1)
     user2_both_start()
     return new_both_list, both_list_1
 
 
 """
-Prints out the same randomly generatd boy list that user 1 had, for user 2
+- Prints out the same randomly generatd boy list that user 1 received
+- User 2 selects if they like the name and if so, name is appended
+to another lise to compare to user 1's selections
 """
 
 
 def user2_boy_start():
-    global t2
-    list.clear(boy_list_2)
     print(f"{user2} it's now your turn... get ready..." + "\n")
     for name in new_boy_list:
         print(name)
@@ -131,14 +158,13 @@ def user2_boy_start():
         if user2_answer == 'y':
             boy_list_2.append(name)
 
-    # print(boy_list_2)
-
     check_matches_boys()
-    return boy_list_2, t2
+    return boy_list_2,
 
 
 """
-Compares both boy name lists from both users and checks for matches
+Compares both boy name lists from both users and checks for matches,
+calling required function dependent on reulsts of data.
 """
 
 
@@ -156,9 +182,12 @@ def check_matches_boys():
     else:
         game_over()
 
-    print(matches)
-    # results(matches)
     return matches
+
+
+"""
+Prints statement to users if no matches
+"""
 
 
 def game_over():
@@ -166,7 +195,9 @@ def game_over():
 
 
 """
-Prints out the same randomly generatd girl list that user 1 had, for user 2
+- Prints out the same randomly generatd girl list that user 1 received
+- User 2 selects if they like the name and if so, name is appended
+to another lise to compare to user 1's selections
 """
 
 
@@ -178,23 +209,14 @@ def user2_girl_start():
         if user2_answer == 'y':
             girl_list_2.append(name)
 
-    # print(girl_list_2)
     check_matches_girls()
     return girl_list_2
 
 
-# def check_matches_girls():
-#     global matches
-#     a = list3
-#     b = list4
-#     girl_matches = []
-#     for x in a:
-#         if x in b:
-#             girl_matches.append(x)
-
-#     print(girl_matches)
-#     results(girl_matches)
-#     return girl_matches
+"""
+Compares both boy name lists from both users and checks for matches,
+calling required function dependent on reulsts of data.
+"""
 
 
 def check_matches_girls():
@@ -211,17 +233,13 @@ def check_matches_girls():
     else:
         game_over()
 
-    # print(matches)
-    # results(matches)
-
-    # print(matches)
-    # results(matches)
     return matches
 
 
 """
-Prints out the same randomly generatd both names list that user 1 had,
-for user 2 to enter responses
+- Prints out the same randomly generatd list that user 1 received
+- User 2 selects if they like the name and if so, name is appended
+to another lise to compare to user 1's selections
 """
 
 
@@ -233,9 +251,14 @@ def user2_both_start():
         if user2_answer == 'y':
             both_list_2.append(name)
 
-    # print(both_list_2)
     check_matches_both()
     return both_list_2
+
+
+"""
+Compares both boy name lists from both users and checks for matches,
+calling required function dependent on reulsts of data.
+"""
 
 
 def check_matches_both():
@@ -253,15 +276,17 @@ def check_matches_both():
     else:
         game_over()
 
-    # print(matches)
-    # results(matches)
-    # print(matches)
-    # results(matches)
     return matches
 
 
+"""
+Prints statement to users advising them of their matches
+"""
+
+
 def results(list):
-    print(f"The names you both like are {matches}")
+    print("The names you both like are: ")
+    print(', '.join(matches))
 
 
 list1 = boy_list_1
@@ -271,13 +296,3 @@ list2 = boy_list_2
 list5 = both_list_1
 list6 = both_list_2
 introduction()
-# print(list1)
-# print(list2)
-# print(list3)
-# print(list4)
-
-# user2_boy_start()
-# user2_girl_start()
-# user2_both_start()
-# print(boy_list_1)
-# check_matches_boys()
