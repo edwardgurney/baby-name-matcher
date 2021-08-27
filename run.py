@@ -154,8 +154,13 @@ def check_matches_boys():
         if x in b:
             matches.append(x)
 
+    if len(matches):
+        results(matches)
+    else:
+        game_over()
+
     print(matches)
-    results(matches)
+    # results(matches)
     return matches
 
 
