@@ -91,6 +91,9 @@ def boys():
     return new_boy_list, boy_list_1,
 
 
+# def valid_input():
+
+
 """
 - Iterates through girl_names list generating 20 random names,
 removes that name from the list (to prevent repeat names) and
