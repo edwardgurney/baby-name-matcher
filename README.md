@@ -72,7 +72,8 @@ Below is the flow chart that was initially designed at the concept stage of the 
 ### **Existing Features**
 
 #### **Welcome Message**
-- There is a welcome message at the start of the app with some ASCII art. Here is a picture of the ASCII art.
+- There is a welcome message at the start of the app with a polite welcome message from the bot.
+
 
 #### **Confirms Play**
 - The app will ask if the user wants to play.
@@ -106,7 +107,48 @@ Below is the flow chart that was initially designed at the concept stage of the 
 ### **PEP8 Validation**
 PEP8 online vailidation was used to check for any errors. All of the code passes with no errors or warning present. 
 
+## **Bugs**
 
+### Fixed Bugs
+- The matches we appearing in list form with the original brackets and quote marks. For example ["Arlo", "James", "Mia"] ]. This didn't contribute much to user experience. The fix for this was found online, a workround to take these away. After this is still didn't look quite as it should, so I added a new line so the name appeared on their own line.
+
+- The built in functions found online that would be able to find matches, for example using sets (set(a) & set(b)) wasn;t having the desired result and was introducing bigs to the program. So I designed my own function, with a for loop and using the len() method to get the desired result. 
+
+<br>
+
+### Unfixed Bugs
+
+
+## **Deployment**
+
+The app was deployed on Heroku in the following steps:
+
+1. Created a Heroku account (or log in if existing user).
+2. In the upper right hand corner clicked "New" and then selected "Create New App"
+3. Chose a name for the app and region and clicked "Create App"
+4. 
+
+<br>
+To clone this repository follow the below steps:
+
+1. Go to the GitHub repository
+2. Click on the Coode drop down button and select if you wish to clone with either HTTPS, SSH or Ghib CLI.
+3. Click the copy button (clipboard emblem).
+4. Open Git Bash (Mac or Windows)
+5. Choose the working directory
+6. Type git clone to add the copied URL.
+7. Press Enter. (This will create your clone).
+
+## **Credits**
+
+- The code used to remove the square brackets and quote marks from the matched named list that is printed to the user at the end of the game was taken from a website called [codegrepper](https://www.codegrepper.com/code-examples/typescript/how+to+print+list+without+brackets+python)
+
+- Assistance for generating random strings from [kishstats](https://www.youtube.com/watch?v=pt3k8pc8f0A&t=549s) on youtube. 
+
+## **Acknowledgements**
+
+- My mentor Chris Quin for his continued support in my projects (also a mention to Precious who stepped in for Chris for one session for this project)
+- My pregnant wife Rebecca for her continued support and looking after our daughter whilst I stress out and try and code.
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
