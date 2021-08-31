@@ -31,8 +31,8 @@ def introduction():
         print("Oh that's too bad... maybe next time.")
         quit()
     elif intro_answer != 'y' or 'n':
-        print("That is not a valid input, system will now close...")
-        quit()
+        print("That is not a valid input, please try again...")
+        introduction()
 
 
 """
@@ -83,9 +83,16 @@ def boys():
         boy_names.remove(name)
         print(name)
         new_boy_list.append(name)
-        boys_answer = input("y/n:\n ")
-        if boys_answer == 'y':
-            boy_list_1.append(name)
+        while True:
+            boys_answer = input("y/n: ")
+            if boys_answer == 'y':
+                boy_list_1.append(name)
+                break
+            elif boys_answer == 'n':
+                break
+            else:
+                print("Sorry, invalid input, please enter 'y' or 'n'\n")
+                print(name)
 
     user2_boy_start()
     return new_boy_list, boy_list_1,
@@ -112,9 +119,16 @@ def girls():
         girl_names.remove(gname)
         print(gname)
         new_girl_list.append(gname)
-        girls_answer = input("y/n:\n ")
-        if girls_answer == 'y':
-            girl_list_1.append(gname)
+        while True:
+            girls_answer = input("y/n:\n ")
+            if girls_answer == 'y':
+                girl_list_1.append(gname)
+                break
+            elif girls_answer == 'n':
+                break
+            else:
+                print("Sorry, invalid input, please enter 'y' or 'n'\n")
+                print(gname)
 
     user2_girl_start()
     return girl_list_1, new_girl_list
@@ -138,9 +152,16 @@ def both():
         both_names.remove(bname)
         print(bname)
         new_both_list.append(bname)
-        both_answer = input("y/n:\n ")
-        if both_answer == 'y':
-            both_list_1.append(bname)
+        while True:
+            both_answer = input("y/n:\n ")
+            if both_answer == 'y':
+                both_list_1.append(bname)
+                break
+            elif both_answer == 'n':
+                break
+            else:
+                print("Sorry, invalid input, please enter 'y' or 'n'\n")
+                print(bname)
 
     user2_both_start()
     return new_both_list, both_list_1
@@ -157,9 +178,16 @@ def user2_boy_start():
     print(f"{user2} it's now your turn... get ready..." + "\n")
     for name in new_boy_list:
         print(name)
-        user2_answer = input("y/n:\n ")
-        if user2_answer == 'y':
-            boy_list_2.append(name)
+        while True:
+            user2_answer = input("y/n:\n ")
+            if user2_answer == 'y':
+                boy_list_2.append(name)
+                break
+            elif user2_answer == 'n':
+                break
+            else:
+                print("Sorry, invalid input, please enter 'y' or 'n'\n")
+                print(name)
 
     check_matches_boys()
     return boy_list_2,
@@ -208,9 +236,16 @@ def user2_girl_start():
     print(f"{user2} it's now your turn to play... get ready..." + "\n")
     for name in new_girl_list:
         print(name)
-        user2_answer = input("y/n:\n ")
-        if user2_answer == 'y':
-            girl_list_2.append(name)
+        while True:
+            user2_answer = input("y/n:\n ")
+            if user2_answer == 'y':
+                girl_list_2.append(name)
+                break
+            elif user2_answer == 'n':
+                break
+            else:
+                print("Sorry, invalid input, please enter 'y' or 'n'\n")
+                print(name)
 
     check_matches_girls()
     return girl_list_2
@@ -250,9 +285,16 @@ def user2_both_start():
     print(f"{user2} it's now your turn... get ready")
     for name in new_both_list:
         print(name)
-        user2_answer = input("y/n:\n ")
-        if user2_answer == 'y':
-            both_list_2.append(name)
+        while True:
+            user2_answer = input("y/n:\n ")
+            if user2_answer == 'y':
+                both_list_2.append(name)
+                break
+            elif user2_answer == 'n':
+                break
+            else:
+                print("Sorry, invalid input, please enter 'y' or 'n'\n")
+                print(name)
 
     check_matches_both()
     return both_list_2
