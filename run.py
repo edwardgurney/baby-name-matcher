@@ -2,7 +2,7 @@ from name import boy_names, girl_names, both_names
 import random
 
 
-boy_list_1 = []
+name_list_1 = []
 boy_list_2 = []
 girl_list_1 = []
 girl_list_2 = []
@@ -11,6 +11,7 @@ both_list_2 = []
 new_boy_list = []
 new_girl_list = []
 new_both_list = []
+new_name_list = []
 
 
 """
@@ -55,11 +56,11 @@ def start():
 
     gender_selection = input("1.Boy, 2.Girl, 3.Both: ")
     if gender_selection == str(1) or gender_selection == 'boy':
-        boys()
+        boys('boy')
     elif gender_selection == str(2) or gender_selection == 'girl':
-        girls()
+        boys('girl')
     elif gender_selection == str(3) or gender_selection == 'both':
-        both()
+        boys('both')
     else:
         print("You entered and ivalid input, try again...\n")
         start()
@@ -74,19 +75,43 @@ appended to a new list to compare with user 2.
 """
 
 
-def boys():
-    global boys_answer
+def boys(a):
     global new_boy_list
+    global name
+    global result
     print(f"{user1}, are you ready, your names are coming...")
+    if a == 'boy':
+        names = boy_names
+    if a == 'girl':
+        names = girl_names
+    if a == 'both':
+        names = both_names
     for name in range(20):
-        name = (random.choice(boy_names))
-        boy_names.remove(name)
+        name = (random.choice(names))
+        if a == 'boy':
+            boy_names.remove(name)
+        if a == 'girl':
+            girl_names.remove(name)
+        if a == 'both':
+            both_names.remove(name)
+        # print(name)
+        new_name_list.append(name)
+
+    # print(new_boy_list)
+    result = new_name_list
+    # print(result)
+    user_choice(result)
+    return result
+
+
+def user_choice(names):
+    global boys_answer
+    for name in names:
         print(name)
-        new_boy_list.append(name)
         while True:
             boys_answer = input("y/n: ")
             if boys_answer == 'y':
-                boy_list_1.append(name)
+                name_list_1.append(name)
                 break
             elif boys_answer == 'n':
                 break
@@ -95,10 +120,7 @@ def boys():
                 print(name)
 
     user2_boy_start()
-    return new_boy_list, boy_list_1,
-
-
-# def valid_input():
+    return new_boy_list, name_list_1,
 
 
 """
@@ -110,28 +132,28 @@ appended to a new list to compare with user 2.
 """
 
 
-def girls():
-    global girls_answer
-    global new_girl_list
-    print(f"{user1}, are you ready, your names are coming...")
-    for gname in range(20):
-        gname = (random.choice(girl_names))
-        girl_names.remove(gname)
-        print(gname)
-        new_girl_list.append(gname)
-        while True:
-            girls_answer = input("y/n:\n ")
-            if girls_answer == 'y':
-                girl_list_1.append(gname)
-                break
-            elif girls_answer == 'n':
-                break
-            else:
-                print("Sorry, invalid input, please enter 'y' or 'n'\n")
-                print(gname)
+# def girls():
+#     global girls_answer
+#     global new_girl_list
+#     print(f"{user1}, are you ready, your names are coming...")
+#     for gname in range(20):
+#         gname = (random.choice(girl_names))
+#         girl_names.remove(gname)
+#         print(gname)
+#         new_girl_list.append(gname)
+#         while True:
+#             girls_answer = input("y/n:\n ")
+#             if girls_answer == 'y':
+#                 girl_list_1.append(gname)
+#                 break
+#             elif girls_answer == 'n':
+#                 break
+#             else:
+#                 print("Sorry, invalid input, please enter 'y' or 'n'\n")
+#                 print(gname)
 
-    user2_girl_start()
-    return girl_list_1, new_girl_list
+#     user2_girl_start()
+#     return girl_list_1, new_girl_list
 
 
 """
@@ -143,28 +165,28 @@ appended to a new list to compare with user 2.
 """
 
 
-def both():
-    global both_answer
-    global new_both_list
-    print(f"{user1}, are you ready, your names are coming...")
-    for bname in range(20):
-        bname = (random.choice(both_names))
-        both_names.remove(bname)
-        print(bname)
-        new_both_list.append(bname)
-        while True:
-            both_answer = input("y/n:\n ")
-            if both_answer == 'y':
-                both_list_1.append(bname)
-                break
-            elif both_answer == 'n':
-                break
-            else:
-                print("Sorry, invalid input, please enter 'y' or 'n'\n")
-                print(bname)
+# def both():
+#     global both_answer
+#     global new_both_list
+#     print(f"{user1}, are you ready, your names are coming...")
+#     for bname in range(20):
+#         bname = (random.choice(both_names))
+#         both_names.remove(bname)
+#         print(bname)
+#         new_both_list.append(bname)
+#         while True:
+#             both_answer = input("y/n:\n ")
+#             if both_answer == 'y':
+#                 both_list_1.append(bname)
+#                 break
+#             elif both_answer == 'n':
+#                 break
+#             else:
+#                 print("Sorry, invalid input, please enter 'y' or 'n'\n")
+#                 print(bname)
 
-    user2_both_start()
-    return new_both_list, both_list_1
+#     user2_both_start()
+#     return new_both_list, both_list_1
 
 
 """
@@ -176,7 +198,7 @@ to another lise to compare to user 1's selections
 
 def user2_boy_start():
     print(f"{user2} it's now your turn... get ready..." + "\n")
-    for name in new_boy_list:
+    for name in new_name_list:
         print(name)
         while True:
             user2_answer = input("y/n:\n ")
@@ -232,23 +254,23 @@ to another lise to compare to user 1's selections
 """
 
 
-def user2_girl_start():
-    print(f"{user2} it's now your turn to play... get ready..." + "\n")
-    for name in new_girl_list:
-        print(name)
-        while True:
-            user2_answer = input("y/n:\n ")
-            if user2_answer == 'y':
-                girl_list_2.append(name)
-                break
-            elif user2_answer == 'n':
-                break
-            else:
-                print("Sorry, invalid input, please enter 'y' or 'n'\n")
-                print(name)
+# def user2_girl_start():
+#     print(f"{user2} it's now your turn to play... get ready..." + "\n")
+#     for name in new_girl_list:
+#         print(name)
+#         while True:
+#             user2_answer = input("y/n:\n ")
+#             if user2_answer == 'y':
+#                 girl_list_2.append(name)
+#                 break
+#             elif user2_answer == 'n':
+#                 break
+#             else:
+#                 print("Sorry, invalid input, please enter 'y' or 'n'\n")
+#                 print(name)
 
-    check_matches_girls()
-    return girl_list_2
+#     check_matches_girls()
+#     return girl_list_2
 
 
 """
@@ -257,21 +279,21 @@ calling required function dependent on reulsts of data.
 """
 
 
-def check_matches_girls():
-    global matches
-    a = list3
-    b = list4
-    matches = []
-    for x in a:
-        if x in b:
-            matches.append(x)
+# def check_matches_girls():
+#     global matches
+#     a = list3
+#     b = list4
+#     matches = []
+#     for x in a:
+#         if x in b:
+#             matches.append(x)
 
-    if len(matches):
-        results(matches)
-    else:
-        game_over()
+#     if len(matches):
+#         results(matches)
+#     else:
+#         game_over()
 
-    return matches
+#     return matches
 
 
 """
@@ -281,23 +303,23 @@ to another lise to compare to user 1's selections
 """
 
 
-def user2_both_start():
-    print(f"{user2} it's now your turn... get ready")
-    for name in new_both_list:
-        print(name)
-        while True:
-            user2_answer = input("y/n:\n ")
-            if user2_answer == 'y':
-                both_list_2.append(name)
-                break
-            elif user2_answer == 'n':
-                break
-            else:
-                print("Sorry, invalid input, please enter 'y' or 'n'\n")
-                print(name)
+# def user2_both_start():
+#     print(f"{user2} it's now your turn... get ready")
+#     for name in new_both_list:
+#         print(name)
+#         while True:
+#             user2_answer = input("y/n:\n ")
+#             if user2_answer == 'y':
+#                 both_list_2.append(name)
+#                 break
+#             elif user2_answer == 'n':
+#                 break
+#             else:
+#                 print("Sorry, invalid input, please enter 'y' or 'n'\n")
+#                 print(name)
 
-    check_matches_both()
-    return both_list_2
+#     check_matches_both()
+#     return both_list_2
 
 
 """
@@ -306,22 +328,22 @@ calling required function dependent on reulsts of data.
 """
 
 
-def check_matches_both():
-    global matches
+# def check_matches_both():
+#     global matches
 
-    a = list5
-    b = list6
-    matches = []
-    for x in a:
-        if x in b:
-            matches.append(x)
+#     a = list5
+#     b = list6
+#     matches = []
+#     for x in a:
+#         if x in b:
+#             matches.append(x)
 
-    if len(matches):
-        results(matches)
-    else:
-        game_over()
+#     if len(matches):
+#         results(matches)
+#     else:
+#         game_over()
 
-    return matches
+#     return matches
 
 
 """
@@ -334,7 +356,7 @@ def results(list):
     print(', '.join(matches))
 
 
-list1 = boy_list_1
+list1 = name_list_1
 list3 = girl_list_1
 list4 = girl_list_2
 list2 = boy_list_2
