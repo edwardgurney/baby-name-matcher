@@ -45,7 +45,7 @@ def start():
     print("baby names you both like?\n")
     print(f"{user1}, you will go first, {user2}, you will go second...")
     print("When the baby names appear, please type 'y' or 'n'\n")
-    print("Would you like to 1select boy names, girl names or both?")
+    print("Would you like to select boy names, girl names or both?")
 
     gender_selection = input("1.Boy, 2.Girl, 3.Both: ")
     if gender_selection == str(1) or gender_selection == 'boy':
@@ -60,11 +60,9 @@ def start():
 
 
 """
-- Iterates through boy_names list generating 20 random names,
+- Iterates through the names list generating 20 random names,
 removes that name from the list (to prevent repeat names) and
 creates new list so user 2 can receive same names.
-- Asks user for input, if they like the name and if so, is
-appended to a new list to compare with user 2.
 """
 
 
@@ -92,6 +90,13 @@ def name_generation(a):
     return result
 
 
+"""
+- Asks user for input, if they like the name and if so, is
+appended to a new list to compare with user 2.
+- Rejects any invalid user input.
+"""
+
+
 def user_choice(names):
     global user_answer
     for name in names:
@@ -112,7 +117,7 @@ def user_choice(names):
 
 
 """
-- Prints out the same randomly generatd boy list that user 1 received
+- Prints out the same randomly generatd name list that user 1 received
 - User 2 selects if they like the name and if so, name is appended
 to another lise to compare to user 1's selections
 """
@@ -138,7 +143,7 @@ def user2_start():
 
 
 """
-Compares both boy name lists from both users and checks for matches,
+Compares both name lists from both users and checks for matches,
 calling required function dependent on reulsts of data.
 """
 

@@ -55,7 +55,15 @@ At the end of the session, the users are told which names they chose match. If t
 
 ### *Flowchart*
 
-Below is the flow chart that was initially designed at the concept stage of the app. 
+
+<details>
+  <summary>Here is the flow chart that was designed at the concept stage of the app. </summary>
+  
+  
+<img src="views/images/flowchart.png">
+
+</details>
+<br>
 
 ## **Technology Used**
 
@@ -71,62 +79,181 @@ Below is the flow chart that was initially designed at the concept stage of the 
 
 ### **Existing Features**
 
+- Below are descriptions of features, click on the drop down arrow to view image examples.
+
 #### **Welcome Message**
-- There is a welcome message at the start of the app with a polite welcome message from the bot.
+<details>
+  <summary>There is a welcome message at the start of the app with a polite welcome message from the bot.</summary>
+  
 
+<img src="views/images/welcome_message.png">
 
-#### **Confirms Play**
-- The app will ask if the user wants to play.
+</details>
+<br>
+
+#### **Confirm Play**
+
+<details>
+  <summary>The app will ask if the user wants to play.</summary>
+  
+
+<img src="views/images/play_confirmation.png">
+
+</details>
+<br>
 
 #### **Name Entry**
-- Users can enter their names so that the game is personalised to them, enhancing user experience.
+
+<details>
+  <summary>Users can enter their names so that the game is personalised to them, enhancing user experience.</summary>
+  
+  
+<img src="views/images/name_entry.png">
+
+</details>
+<br>
 
 #### **Gender Selection**
-- Offers the user the choice of genders for their names, boy, girls or both. 
+
+<details>
+  <summary>Offers the user the choice of genders for their names, boy, girls or both. </summary>
+  
+  
+<img src="views/images/gender_selection.png">
+
+</details>
+<br>
 
 #### **Random Names**
 - There are hundreds of names stored in the app so that users can play many times and have a decreased chance of seeing the same names.
 - The names are never repeated to the same user in the same session.
 - User 2 will receive the exact same names that were randomly generated for user 1, to increase the chances of matches. 
+<details>
+  <summary>List of names picture</summary>
+  
+  
+<img src="views/images/name_list.png">
+
+</details>
+<br>
 
 #### **List of Matched Names**
-- The users are given a list of the matched names once user 2 has completed their selection. 
+
+<details>
+  <summary>The users are given a list of the matched names once user 2 has completed their selection. </summary>
+  
+  
+<img src="views/images/matched_names.png">
+
+</details>
+<br>
 
 #### **Friendly Bot**
 - The app/bot talks to the users in a friendly manner, rather than just asking for inputs and presenting answers. 
 - The bot will keep them informed of the rules at the start and assist them if they input a wrong response. 
+<details>
+  <summary>This screen shot for example shows the bot advising user 1 that their names are coming</summary>
+  
+  
+<img src="views/images/user1_name_selection.png">
+
+</details>
+<br>
 
 ### **Screenshots**
-- Below are some screenshots of the application representing what has been discussed above.  
+- All screenshots are in the above section, click on the drop down arrows to access them.  
 
 ### **Features to Implement in future Versions**
+- Saving the matched list and having the ability to share it to send to others would be a nice addition. 
+
+- During the process of coding, user 1 and user 2 were presented with their own lists once they had made their selections. this was removed from the final version so that users were just presented with their matches. However, this could be re-introduced pending user feedback.
 
 ## **Testing**
 
 ## **Languages Used & Validation** - Python.
 ### **PEP8 Validation**
-PEP8 online vailidation was used to check for any errors. All of the code passes with no errors or warning present. 
+PEP8 online vailidation was used to check for any errors. All of the code passes with no errors or warning present. All code was returned as 'All Right'. Example screen shots of some of the code are below:
+
+<details>
+  <summary>This screen shows the top of the file and the code being accepted on Pep8</summary>
+  
+  
+<img src="views/images/top_of_file.png">
+
+</details>
+<br>
+
+<details>
+  <summary>This screen shows the introduction function and the code being accepted on Pep8</summary>
+  
+  
+<img src="views/images/Introduction_function.png">
+
+</details>
+<br>
+
+<details>
+  <summary>This screen shows most of the user choice function and the code being accepted on Pep8</summary>
+  
+  
+<img src="views/images/user_choice_func.png">
+
+</details>
+<br>
+
+<details>
+  <summary>This screen shows the user check matches function and the code being accepted on Pep8</summary>
+  
+  
+<img src="views/images/check_matches.png">
+
+</details>
+<br>
+
+<details>
+  <summary>This screen shows the game over and result functions and the code being accepted on Pep8</summary>
+  
+  
+<img src="views/images/game_over_result_func.png">
+
+</details>
+<br>
+
+<details>
+  <summary>This screen shows part of the name generation function and the code being accepted on Pep8</summary>
+  
+  
+<img src="views/images/name_generation.png">
+
+</details>
+<br>
 
 ## **Bugs**
 
 ### Fixed Bugs
-- The matches we appearing in list form with the original brackets and quote marks. For example ["Arlo", "James", "Mia"] ]. This didn't contribute much to user experience. The fix for this was found online, a workround to take these away. After this is still didn't look quite as it should, so I added a new line so the name appeared on their own line.
+- The matches were appearing in list form with the original brackets and quote marks. For example ["Arlo", "James", "Mia"]. This didn't contribute much to user experience. The fix for this was found online (this has been accredited in the credits section), a workround to take these brackets away. After this it still didn't look pleasing to the eye, so I added a new line so the names appeared on their own line.
 
-- The built in functions found online that would be able to find matches, for example using sets (set(a) & set(b)) wasn;t having the desired result and was introducing bigs to the program. So I designed my own function, with a for loop and using the len() method to get the desired result. 
+- The built in functions found online that would be able to find matches, for example using sets (set(a) & set(b)) wasn't having the desired result and was introducing bugs to the program. So I designed my own function, with a for loop and using the len() method to get the desired result. 
+
 
 <br>
 
 ### Unfixed Bugs
 
+- After significant testing there does not seem to be any bugs at present. 
 
 ## **Deployment**
 
 The app was deployed on Heroku in the following steps:
 
 1. Created a Heroku account (or log in if existing user).
-2. In the upper right hand corner clicked "New" and then selected "Create New App"
-3. Chose a name for the app and region and clicked "Create App"
-4. 
+2. In the upper right hand corner clicked "New" and then selected "Create New App".
+3. Chose a name for the app and region and clicked "Create App".
+4. On the settings tab, add python build pack and the node.js build pack.
+5. Picked Github as the deployment method on the "deploy" tab.
+6. Search for repository 
+7. Enable automatic deploys and then deploy branch
+8. Once processing has finished click on "View"
 
 <br>
 To clone this repository follow the below steps:
@@ -145,10 +272,12 @@ To clone this repository follow the below steps:
 
 - Assistance for generating random strings from [kishstats](https://www.youtube.com/watch?v=pt3k8pc8f0A&t=549s) on youtube. 
 
+- The flow diagram for the concept stage of the project was done using [diagrams.net](https://www.diagrams.net/)
+
 ## **Acknowledgements**
 
-- My mentor Chris Quin for his continued support in my projects (also a mention to Precious who stepped in for Chris for one session for this project)
-- My pregnant wife Rebecca for her continued support and looking after our daughter whilst I stress out and try and code.
+- My mentor Chris Quin for his continued support in my projects (also a mention to Precious who stepped in for Chris for one session for this project).
+- My pregnant wife Rebecca for her continued support during many hours working through this course and looking after our daughter whilst I stress out and try and code.
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
