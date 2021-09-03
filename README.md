@@ -1,7 +1,7 @@
 # Baby Matching Bot
 ### Developer: Edward Gurney
 
-### You can view the live project here: [Baby Name Matcher]
+### You can view the live project here: [Baby Name Matcher](https://baby-matching-bot.herokuapp.com/)
 <br>
 
 ## **Table of Contents**
@@ -75,11 +75,15 @@ At the end of the session, the users are told which names they chose match. If t
 - Gitpod
 - Heroku
 
+### *Libraries*
+- Random() - The random module from Python's built in library
+was used. This allowed the randome names to be generated from the list of names that the user selected. 
+
 ## **Features**
 
 ### **Existing Features**
 
-- Below are descriptions of features, click on the drop down arrow to view image examples.
+- Below are descriptions of features with screenshots that demonstrate the project outcomes, click on the drop down arrow to view image examples.
 
 #### **Welcome Message**
 <details>
@@ -278,35 +282,3 @@ To clone this repository follow the below steps:
 
 - My mentor Chris Quin for his continued support in my projects (also a mention to Precious who stepped in for Chris for one session for this project).
 - My pregnant wife Rebecca for her continued support during many hours working through this course and looking after our daughter whilst I stress out and try and code.
-
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome edwardgurney,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!

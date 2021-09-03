@@ -175,7 +175,7 @@ def game_over():
 
 
 """
-Prints statement to users advising them of their matches
+Prints statement to users advising them of their matches.
 """
 
 
